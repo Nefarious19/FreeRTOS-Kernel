@@ -107,6 +107,7 @@ if(NOT FREERTOS_PORT)
         " GCC_RISC_V                       - Compiler: GCC           Target: RISC-V\n"
         " GCC_RISC_V_PULPINO_VEGA_RV32M1RM - Compiler: GCC           Target: RISC-V Pulpino Vega RV32M1RM\n"
         " GCC_RISC_V_GENERIC               - Compiler: GCC           Target: RISC-V with FREERTOS_RISCV_EXTENSION\n"
+        " GCC_RISC_V_WCH_RISC_V4A_FPU      - Compiler: GCC           Target: RISC-V with FREERTOS_RISCV_EXTENSION\n"
         " GCC_RL78                         - Compiler: GCC           Target: Renesas RL78\n"
         " GCC_RX100                        - Compiler: GCC           Target: Renesas RX100\n"
         " GCC_RX200                        - Compiler: GCC           Target: Renesas RX200\n"

@@ -26,8 +26,8 @@
  *
  */
 
-#ifndef PORTCONTEXT_H
-#define PORTCONTEXT_H
+#ifndef __PORT_CONTEXT__
+#define __PORT_CONTEXT__
 
 #if __riscv_xlen == 64
     #define portWORD_SIZE    8
@@ -189,4 +189,4 @@ mret
    .endm
 /*-----------------------------------------------------------*/
 
-#endif /* PORTCONTEXT_H */
+#endif /* __PORT_CONTEXT__ */

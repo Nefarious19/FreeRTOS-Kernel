@@ -6,6 +6,10 @@ if( FREERTOS_PORT STREQUAL "IAR_RISC_V_GENERIC" )
     include( IAR/RISC-V/chip_extensions.cmake )
 endif()
 
+if( FREERTOS_PORT STREQUAL "GCC_RISC_V_WCH_RISC_V4A_FPU" )
+    include( GCC/RISC-V/chip_extensions.cmake )
+endif()
+
 # FreeRTOS internal cmake file. Do not use it in user top-level project
 
 if (FREERTOS_PORT STREQUAL "A_CUSTOM_PORT")
@@ -301,6 +305,10 @@ add_library(freertos_kernel_port STATIC
         GCC/RISC-V/portASM.S>
 
     $<$<STREQUAL:${FREERTOS_PORT},GCC_RISC_V_GENERIC>:
+        GCC/RISC-V/port.c
+        GCC/RISC-V/portASM.S>
+
+    $<$<STREQUAL:${FREERTOS_PORT},GCC_RISC_V_WCH_RISC_V4A_FPU>:
         GCC/RISC-V/port.c
         GCC/RISC-V/portASM.S>
 
@@ -862,6 +870,10 @@ target_include_directories(freertos_kernel_port PUBLIC
         ${CMAKE_CURRENT_LIST_DIR}/GCC/RISC-V/chip_specific_extensions/Pulpino_Vega_RV32M1RM>
 
     $<$<STREQUAL:${FREERTOS_PORT},GCC_RISC_V_GENERIC>:
+        ${CMAKE_CURRENT_LIST_DIR}/GCC/RISC-V
+        ${CMAKE_CURRENT_LIST_DIR}/GCC/RISC-V/chip_specific_extensions/${FREERTOS_RISCV_EXTENSION}>
+
+    $<$<STREQUAL:${FREERTOS_PORT},GCC_RISC_V_WCH_RISC_V4A_FPU>:
         ${CMAKE_CURRENT_LIST_DIR}/GCC/RISC-V
         ${CMAKE_CURRENT_LIST_DIR}/GCC/RISC-V/chip_specific_extensions/${FREERTOS_RISCV_EXTENSION}>
 

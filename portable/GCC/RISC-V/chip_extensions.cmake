@@ -1,6 +1,7 @@
 if( FREERTOS_PORT STREQUAL "GCC_RISC_V_GENERIC" )
     set( VALID_CHIP_EXTENSIONS
             "Pulpino_Vega_RV32M1RM"
+            "WCH_RISC_V4A_FPU"
             "RISCV_MTIME_CLINT_no_extensions"
             "RISCV_no_extensions"
             "RV32I_CLINT_no_extensions" )
